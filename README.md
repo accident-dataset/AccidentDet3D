@@ -1,6 +1,25 @@
-# Scenario Detection
+# AccidentDet3D: Automated Accident Detection for Roadside Sensors
+<div align="center">
+<a href="https://accident-dataset.github.io/"><img src="https://img.shields.io/badge/Website-AccidentDet3D-0065BD.svg" alt="Website Badge"/></a>
+<a href=""><img src="https://img.shields.io/badge/Dataset-Accid3nD-0065BD.svg?style=flat&logo=github&logoColor=white" alt="Github Badge"/></a>
+<a href=""><img src="https://img.shields.io/badge/Dev_Kit-code-E37222.svg?style=flat&logo=github&logoColor=white" alt="Github Badge"/></a>
+<a href="https://arxiv.org/pdf/0000.00000.pdf"><img src="https://img.shields.io/badge/Paper-a2ad00.svg" alt="Paper Badge"/></a>
 
-The scenario detection is a framework for roadside sensors to automatically extract traffic scenarios like accidents, breakdowns, traffic jams and slow moving traffic. It can be applied to rosbag recordings that are recorded by roadside sensors. Depending on the arguments chosen, scenario statistics, scenario plots and images of detected events are automatically generated.
+<a href=""><img src="https://img.shields.io/badge/Labeling_Tool-3D_BAT-BC4E99.svg?style=flat&logo=github" alt="Paper Badge"/></a>
+<a href="https://github.com/accident-dataset/AccidentDet3D/stargazers"><img src="https://img.shields.io/github/stars/accident-dataset/AccidentDet3D" alt="Stars Badge"/></a>
+<a href="https://github.com/accident-dataset/AccidentDet3D/network/members"><img src="https://img.shields.io/github/forks/accident-dataset/AccidentDet3D" alt="Forks Badge"/></a>
+<a href="https://github.com/accident-dataset/AccidentDet3D/pulls"><img src="https://img.shields.io/github/issues-pr/accident-dataset/AccidentDet3D" alt="Pull Requests Badge"/></a>
+<a href="https://github.com/accident-dataset/AccidentDet3D/issues"><img src="https://img.shields.io/github/issues/accident-dataset/AccidentDet3D" alt="Issues Badge"/></a>
+<a href=""><img src="https://img.shields.io/badge/license-custom-2b9348.svg" alt="Issues Badge"/></a>
+</div>
+
+<p align="center">
+<img src="imgs/coopdet3d_architecture_v2.png" width="1000" alt="" class="img-responsive">
+</p>
+
+# Abstract
+
+The repository represents a framework for roadside sensors to automatically extract traffic scenarios like accidents, breakdowns, traffic jams and slow moving traffic. It can be applied to rosbag recordings that are recorded by roadside sensors. Depending on the arguments chosen, scenario statistics, scenario plots and images of detected events are automatically generated.
 
 
 # Overview
