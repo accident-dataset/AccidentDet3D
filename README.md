@@ -13,9 +13,9 @@
 <a href=""><img src="https://img.shields.io/badge/license-custom-2b9348.svg" alt="Issues Badge"/></a>
 </div>
 
-<p align="center">
-<img src="imgs/coopdet3d_architecture_v2.png" width="1000" alt="" class="img-responsive">
-</p>
+<img src="img/accidents_title_cropped.svg" width="1000" alt="" class="img-responsive">
+<b>Visualization of the raw Accid3nD dataset.</b> Accidents are  recorded from roadside cameras on a test bed for autonomous driving. The dataset includes scenes with collisions and overturning vehicles. Some vehicles are catching fire.
+
 
 # Abstract
 
@@ -23,12 +23,18 @@ The repository represents a framework for roadside sensors to automatically extr
 
 
 # Overview
+- [Pipeline](#pipeline)
 - [Features](#features)
+- [Dataset](#dataset)
 - [Quick Start](#quick-start)
 - [Usage](#usage)
 - [Output Structure](#output-structure)
 - [Citation](#citation)
 - [Further Information](#further-information)
+
+## Pipeline
+<img src="img/pipeline_cropped.svg" width="1000" alt="" class="img-responsive">
+<b>Accident detection pipeline.</b> We use advanced 3D perception techniques and multi-sensor data fusion to create a real-time digital twin of the traffic. Starting with raw camera images, the framework first performs 3D object detection using MonoDet3D to identify and localize vehicle in three dimensions. Following detection, Poly-MOT tracking is applied to maintain continuity across frames, while sensor data fusion combines inputs from four roadside cameras and four radars. The digital twin then is used in two accident detection modules: 1) The <b>Rule-based Accident Detection</b> module extracts features such as lane IDs, distance matrices, and velocities, identifying potential accidents through predefined maneuver detection rules. 2) The <b>Learning-based Accident Detection</b> module employs a YOLOv8 object detector, trained on a custom dataset, to detect accident events. The final output includes the object's location, confidence score, class, velocity, and detected scenario or maneuver.
 
 
 ## Features
@@ -41,6 +47,9 @@ The repository represents a framework for roadside sensors to automatically extr
 - [x] Creation of images of detected scenarions (e.g. accidents or breakdowns) 
 - [x] Parsing extracted or synthetically generated driving scenarios into `OpenSCENARIO` format
 
+## Dataset
+<img src="img/accidents_labeled_cropped.svg" width="1000" alt="" class="img-responsive">
+<b>Visualization of the labeled Accid3nD dataset</b> with 3D box annotations, instance masks, track IDs, and trajectories. Accidents are recorded from roadside cameras on a test bed for autonomous driving. The dataset includes scenes with collisions and overturning vehicles. Some vehicles are catching fire.
 
 ## Quick Start
 
@@ -156,7 +165,7 @@ The statistics and plots for rosbags, which do not contain the event specified i
 │   │   │   ├── s040_camera_basler_south_far_50mm
 │   │   │   │   ├── image_0
 │   │   │   │   ├── image_1
-│   │   │   │   ├── image_2
+│   │   │   │   ├── image_2 
 │   │   │   ├── s040_camera_basler_south_near_16mm
 │   │   │   │   ├── image_0
 │   │   │   │   ├── image_1
