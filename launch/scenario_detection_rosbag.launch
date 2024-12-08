@@ -1,0 +1,27 @@
+<!--This script extracts scenarios from rosbags (offline processing), writes a scenario statistics into a json file and visualizes the statistics in plots-->
+<!--It optionally can also store the detected scenarios in rosbag files and export the scenarios in OpenSCENARIO (.xosc) files.-->
+<!--Example:-->
+<!--  roslaunch src/scenarios/launch/scenario_detection_rosbag.launch input_topic_dtwin:="/s40/s50/tracker/estimates/throttled" frame_threshold:=50 input_folder_path_rosbags:="/home/providentia/rosbags/input" output_folder_path_extracted_scenarios:="/home/providentia/scenarios_extracted" write_statistics_json:=True write_extended_dtwin_json:=True plot_statistics:=True write_scenarios_rosbag:=False write_openscenario_file:=False  -->
+<launch>
+  <arg name="input_topic_dtwin" default="/s40/s50/tracker/estimates/throttled"/>
+  <arg name="frame_threshold" default="50"/>
+  <arg name="input_folder_path_rosbags" default="/home/providentia/rosbags/input"/>
+  <arg name="output_folder_path_extracted_scenarios" default="/home/providentia/scenarios_extracted"/>
+  <arg name="write_statistics_json" default="True"/>
+  <arg name="write_extended_dtwin_json" default="True"/>
+  <arg name="plot_statistics" default="True"/>
+  <arg name="write_scenarios_rosbag" default="False"/>
+  <arg name="write_openscenario_file" default="False"/>
+
+  <node name="scenario_detection_rosbag" pkg="scenarios" type="scenario_detection_rosbag.py" output="screen" clear_params="true">
+    <param name="~/input_topic_dtwin" value="$(arg input_topic_dtwin)" />
+    <param name="~/frame_threshold" value="$(arg frame_threshold)" />
+    <param name="~/input_folder_path_rosbags" value="$(arg input_folder_path_rosbags)" />
+    <param name="~/output_folder_path_extracted_scenarios" value="$(arg output_folder_path_extracted_scenarios)" />
+    <param name="~/write_statistics_json" value="$(arg write_statistics_json)" />
+    <param name="~/write_extended_dtwin_json" value="$(arg write_extended_dtwin_json)" />
+    <param name="~/plot_statistics" value="$(arg plot_statistics)" />
+    <param name="~/write_scenarios_rosbag" value="$(arg write_scenarios_rosbag)" />
+    <param name="~/write_openscenario_file" value="$(arg write_openscenario_file)" />
+  </node>
+</launch>

@@ -1,0 +1,9 @@
+<!--This scenario detection script subscribes to the live digital twin, detects scenarios and publishes them as ROS topic -->
+<!--Example:-->
+<!--    roslaunch src/scenarios/launch/scenario_dtwin_live.launch input_topic_dtwin:=/s40/s50/tracker/estimates/throttled -->
+<launch>
+    <arg name="input_topic_dtwin" default="/s40/s50/tracker/estimates/throttled"/>
+    <node name="scenario_dtwin_live" pkg="scenarios" type="scenario_dtwin_live.py" output="screen" clear_params="true">
+        <param name="input_topic_dtwin" value="$(arg input_topic_dtwin)"/>
+    </node>
+</launch>

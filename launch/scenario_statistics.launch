@@ -1,0 +1,10 @@
+<!--This script subscribes to the live digital twin topic, calculates the scenario statistics and sends a post request to the web server-->
+<!--Example:-->
+<!--  roslaunch src/scenarios/launch/scenario_statistics.launch input_topic:=/s40/s50/tracker/estimates/throttled-->
+<launch>
+  <arg name="input_topic" default="/s40/s50/tracker/estimates/throttled"/>
+
+  <node name="scenario_statistics_live" pkg="scenarios" type="scenario_statistics_live.py" output="screen" clear_params="true">
+    <param name="input_topic" value="$(arg input_topic)" />
+  </node>
+</launch>
